@@ -16,4 +16,4 @@ import { createContext, ReactNode, useContext, useReducer } from 'react';
 - useContext
 - useReducer - usa e cria o reducer
 
-[Imagem do layout do projeto finalizado](https://github.com/alissonrangel/B7web-multiform-cadastro-react-context-api/blob/main/src/svgs/layout.png?raw=true)
+![Imagem do layout do projeto finalizado](https://github.com/alissonrangel/B7web-multiform-cadastro-react-context-api/blob/main/src/svgs/layout.png?raw=true)
