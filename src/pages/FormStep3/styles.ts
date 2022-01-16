@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div<{borderInputColor: string;}>`
 
     .error{
         background-color: #ccc;
@@ -39,7 +39,7 @@ export const Container = styled.div`
             box-sizing: border-box;
             width: 100%;
             padding: 10px 10px;
-            border: 2px solid #25CD89;
+            border: 2px solid ${props=>props.borderInputColor};
             border-radius: 10px;
             color: #FFF;
             outline: 0;

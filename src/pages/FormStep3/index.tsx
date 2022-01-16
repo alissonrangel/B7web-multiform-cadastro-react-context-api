@@ -8,6 +8,7 @@ export const FormStep3 = () => {
     const history = useHistory();
     const { state, dispatch } = useForm();
     const[errors, setErrors] = useState<string[]>([])
+    let [border, setBorder] = useState("#25CD89")
 
     useEffect(() => {
         if(state.name === '') {
@@ -17,6 +18,14 @@ export const FormStep3 = () => {
                 type: FormActions.setCurrentStep,
                 payload: 3
             });
+        }
+        if(state.email === '' && state.github === '') {
+            setErrors(["Digite o email!!!","Digite o Github!!!"]);
+            setBorder('red');
+            setTimeout(() => {
+                setBorder("#25CD89");                                                
+                setErrors([]);
+            }, 3000);
         }
     }, []);
 
@@ -78,8 +87,8 @@ export const FormStep3 = () => {
 
     return (
         <Theme>
-            <C.Container>
-                <p>Passo 3/3</p>
+            <C.Container borderInputColor={border}>
+                <p>Passo 3/4</p>
                 <h1>Legal {state.name}, onde te achamos?</h1>
                 <p>Preencha com seus contatos para conseguirmos entrar em contato.</p>
 

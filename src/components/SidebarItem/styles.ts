@@ -34,7 +34,8 @@ export const IconArea = styled.div<{ active: boolean; }>`
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: ${props => props.active ? '#25CD89' : '#494A7C'};
+    border: 2px solid #25CD89;
+    background-color: ${props => props.active ? '#25CD89' : '#333'};
     display: flex;
     justify-content: center;
     align-items: center;

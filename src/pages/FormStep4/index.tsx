@@ -7,11 +7,12 @@ import { ChangeEvent, useEffect, useState, FormEvent } from 'react';
 export const FormStep4 = () => {
     const history = useHistory();
     const { state, dispatch } = useForm();
-    const[errors, setErrors] = useState<string[]>([])
 
     useEffect(() => {
         if(state.name === '') {
             history.push('/');
+        }else if( state.email === '' || state.github === '' ) {            
+            history.push('/step3');
         } else {
             dispatch({
                 type: FormActions.setCurrentStep,
@@ -31,19 +32,6 @@ export const FormStep4 = () => {
         console.log(resumo);
     }
 
-    const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
-        dispatch({
-            type: FormActions.setEmail,
-            payload: e.target.value
-        });
-    }
-    const handleGithubChange = (e: ChangeEvent<HTMLInputElement>) => {
-        dispatch({
-            type: FormActions.setGithub,
-            payload: e.target.value
-        });
-    }
-
     return (
         <Theme>
             <C.Container>
@@ -51,12 +39,7 @@ export const FormStep4 = () => {
                 <h1>Legal {state.name}, cadastro completo!</h1>
                 <p>Agora envie para nós o seu cadastro.</p>
 
-                <hr/>
-                {errors.length > 0 && 
-                    errors.map((it, index)=>(
-                        <div className="error" key={index}>{it}</div>
-                    ))                    
-                }
+                <hr/>                
                 
                 <label>
                     Nome
