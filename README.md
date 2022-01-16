@@ -2,8 +2,10 @@
 
 ## Projeto como atividade do curso de React da B7web
 
-#### Context API
+#### React router dom
+- Projeto feito com react-router-dom v5
 
+#### Context API
 - Context - caixa aonde vai armazenar os dados
 - Reducer - agrupamento de ações
 - Provider - ambiente em que vou ter acesso aos dados do contexto
